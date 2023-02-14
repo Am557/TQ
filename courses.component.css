@@ -1,0 +1,16 @@
+table
+{
+    font-size: 28px;
+    font-weight: 300;
+    font-style: oblique;
+}
+table:hover{
+    background-color:rgb(237, 152, 152);
+    background-image :linear-gradient(rgba(192, 172, 172, 0.977),rgba(192, 172, 172, 0.977));
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+    color:rgb(89, 89, 178);
+    font-weight: bold;
+}
