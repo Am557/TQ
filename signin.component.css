@@ -1,0 +1,33 @@
+h2{
+    text-align: center;
+    color:rgb(89, 89, 178);
+    font-weight: bold;
+}
+h3{
+    text-align: center;
+    color:rgb(174, 87, 87)
+}
+form{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
+#s1{
+    padding: 118px 50px 118px 50px;
+    font-weight: bold;
+}
+
+/* #b1{
+    background-color: rgb(92, 92, 185);
+    color: white;
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+    border: 2px solid rgb(92, 92, 185)
+}
+#b1:hover{
+    color:black
+}
+form{
+    border:1px solid rgb(75, 75, 142);
+    padding:20px 20px 20px 20px
+} */
