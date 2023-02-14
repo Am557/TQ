@@ -1,0 +1,30 @@
+img{
+    height:800px
+}
+#b1{
+    background-color: #45526e;
+    text-align: center; 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: large; 
+    border-radius: 6px; 
+    border:#45526e;
+    color:whitesmoke;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+h5{
+    text-align: center;
+    color:white
+}
+#reset{
+    height:25px;
+}

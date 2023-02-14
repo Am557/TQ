@@ -1,0 +1,122 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./assets/homebg1.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Inspire . Learn . Innovate </h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/homebg2.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Build the new you</h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/homebg3.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Find success ahead</h2>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+      <button id="b1" class="carousel-btn p-3" (click)="f1()">Check out Our Courses
+      <span class="carousel-control-next-icon"></span></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <span class="sr-only">Next</span> -->
+    </button>
+</div><br>
+
+<div class="container-fluid mt-3">
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="col mb-4">
+      <div class="card">
+        <img src="./assets/dl.jpeg" style="height:450px" class="card-img-top" alt="...">
+        <div class="card-body bg-dark">
+          <h5 class="card-title">Digital Learning</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="./assets/assess.jpeg" style="height:450px" class="card-img-top" alt="...">
+        <div class="card-body bg-dark">
+          <h5 class="card-title">Assessment Platforms</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="./assets/labs.jpeg" style="height:450px" class="card-img-top" alt="...">
+        <div class="card-body bg-dark">
+          <h5 class="card-title">Labs</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="./assets/industry.jpeg" style="height:450px" class="card-img-top" alt="...">
+        <div class="card-body bg-dark">
+          <h5 class="card-title">Industry</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="card-group">
+    <div class="card">
+      <div>
+        <img src="./assets/bg1.jpeg" class="card-img-top" alt="...">
+      </div>
+      <div class="center">
+        <img src="./assets/trophy.png" style="height:100px"><b><h2>Nation's No.1 Education Institute</h2>
+          <h3>Come join us & get the best experience you need!</h3>
+        </b>
+      </div>
+    </div>
+
+    <div class="card p-3" style="background-color: rgb(235, 167, 39);">
+      <h3 align="center"style="font-family:Verdana, Geneva, Tahoma, sans-serif;margin: 20px;padding: 20px 20px 20px 20px;color:white">Get in Touch</h3><br>
+      <form (ngSubmit)="submit()" novalidate #getintouch="ngForm">
+        <div class="form-group container">
+          <label style="font-family:Verdana, Geneva, Tahoma, sans-serif"><b>Name*</b></label><br>
+          <small class="text-danger" [class.d-none]="name.valid || name.untouched">*Enter name</small>
+          <input name="name" #name="ngModel" required [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="home1.name" class="form-control" >
+          <br>
+
+          <label style="font-family:Verdana, Geneva, Tahoma, sans-serif"><b>Email*</b></label><br>
+            <span *ngIf="email.errors && (email.invalid && email.touched)">
+              <small class="text-danger" *ngIf="email.errors?.['required']">*Enter email</small>
+              <small class="text-danger" *ngIf="email.errors?.['pattern']">*Invalid email address</small>
+            </span>
+          <input name="email" #email="ngModel" pattern="^[a-zA-Z0-9._]+@[a-z0-9.]+\.[a-z]{2,4}$" required [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="home1.email" class="form-control" >
+        <br>
+
+          <label style="font-family:Verdana, Geneva, Tahoma, sans-serif"><b>Phone*</b></label><br>
+            <span class="text-danger" *ngIf="phone.errors && (phone.invalid && phone.touched)">
+              <small *ngIf="phone.errors?.['required']">*Enter phone number</small>
+              <small *ngIf="phone.errors?.['pattern']">*Invalid phone number</small>
+            </span>
+          <input name="phone" pattern="^\d{10}$" #phone="ngModel" [(ngModel)]="home1.phone" [class.is-invalid]="phone.invalid && phone.touched" required class="form-control">
+        <br>
+
+          <label style="font-family:Verdana, Geneva, Tahoma, sans-serif"><b>Message</b></label>
+          <textarea class="form-control" rows="1"></textarea>
+        <br>
+
+            <input type="checkbox" name="box"><b>&nbsp;&nbsp;&nbsp;Subscribe to our newsletter</b>    
+        <br>
+    
+        <div class="container" align="center">
+          <button [disabled]="getintouch.invalid" type="submit" class="btn m-3 p-3 " style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 20px; background-color: black;color:white ">Submit</button>
+          <button type="reset" class="btn bg-transparent"><img id="reset" src="./assets/reseticon.png"></button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
