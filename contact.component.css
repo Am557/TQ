@@ -1,0 +1,16 @@
+h2{
+    text-align: center;
+    color:rgb(89, 89, 178);
+    font-weight: bold;
+}
+h3{
+    text-align: center;
+    color:rgb(174, 87, 87);
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+label{
+    font-weight: bold;
+}

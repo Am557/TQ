@@ -1,0 +1,51 @@
+<div class="container mt-3">
+    <br>
+    
+    <h3>{{message}}</h3>
+    <form (ngSubmit)="submit()" *ngIf="isSubmitted" novalidate #contact="ngForm">
+        <h2>Contact Us</h2><br>
+        <div class="form-group">
+            <label>Name*</label>
+            <input name="name" #name="ngModel" [(ngModel)]="contact1.name" [class.is-invalid]="name.invalid && name.touched" required class="form-control">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">*Enter name</small><br><br>
+
+            <label>Email*</label>
+            <input name="email" #email="ngModel" [(ngModel)]="contact1.email" pattern="^[a-zA-Z0-9._-]+@[a-z0-9]+\.[a-z]{2,4}$" [class.is-invalid]="email.invalid && email.touched" required class="form-control">
+            <span class="text-danger" *ngIf="email.errors && (email.invalid && email.touched)">
+                <small  *ngIf="email.errors?.['required']" >*Enter email</small>
+                <small  *ngIf="email.errors?.['pattern']" >*Invalid email</small>
+            </span><br><br>
+
+            <label>Phone*</label>
+            <input name="phone" #phone="ngModel" [(ngModel)]="contact1.phone" pattern="^\d{10}$" [class.is-invalid]="phone.invalid && phone.touched" required class="form-control">
+            <span class="text-danger" *ngIf="phone.errors && (phone.invalid && phone.touched)">
+                <small  *ngIf="phone.errors?.['required']" >*Enter phone number</small>
+                <small  *ngIf="phone.errors?.['pattern']" >*Invalid phone number</small>
+            </span><br><br>
+
+            <label>Course*</label>
+            <select name="course" #course="ngModel" [(ngModel)]="contact1.course" [class.is-invalid]="course.invalid && course.touched" required class="form-control">
+                <option value="">-Select Course-</option>
+                <option *ngFor="let c of courses">{{c}}</option>
+            </select>
+            <small class="text-danger" [class.d-none]="course.valid || course.untouched">*Select required course</small><br><br>
+
+            <label>Training Mode*</label>
+            <select name="tmode" #tmode="ngModel" [(ngModel)]="contact1.tmode" [class.is-invalid]="tmode.invalid && tmode.touched" required class="form-control">
+                <option value="">-Select Training Mode-</option>
+                <option>Online</option>
+                <option>Offline</option>
+            </select>
+            <small class="text-danger" [class.d-none]="tmode.valid || tmode.untouched">*Select required training mode</small><br><br>
+
+            <label>Ask a Question</label>
+            <textarea class="form-control" rows="2"></textarea><br><br>
+
+        <div class="form-group" align="center">
+            <button type="submit" [disabled]="contact.invalid" class="btn btn-primary">Send</button>&nbsp;&nbsp;
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+
+        </div>
+    </form>
+</div><br>
